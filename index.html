@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Forever ❤️</title>
+    <link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+    <!-- Background overlay image and overlay gradient -->
+    <div class="bg-overlay"></div>
+    <canvas id="canvas-particles"></canvas>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="MyGirl.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- 1. Interactive Envelope Loader (Autoplay bypass & gorgeous entrance) -->
+    <div class="intro-overlay" id="intro-overlay">
+        <div class="envelope-wrapper" id="envelope-wrapper">
+            <div class="envelope" id="envelope">
+                <div class="flap"></div>
+                <div class="pocket"></div>
+                <div class="letter">
+                    <div class="letter-title">Hey Beautiful...</div>
+                    <div class="letter-desc">I made a little surprise for you. Click inside to open it.</div>
+                    <div class="letter-click">Tap to Open ❤️</div>
+                </div>
+                <div class="seal">❤️</div>
+            </div>
+        </div>
+        <div class="envelope-hint">Happy Girlfriend's Day</div>
+        <div class="envelope-hint-sub">Click the envelope to open our letter</div>
+    </div>
+
+    <!-- 2. Main Dashboard Container (Scrapbook Mode) -->
+    <div class="main-wrapper" id="main-wrapper">
+        
+        <!-- Header -->
+        <header class="header-section">
+            <h1 class="header-title">Happy Girlfriend's Day, <span class="dynamic-gf-name">My Love</span></h1>
+            <p class="header-subtitle">You are my today & all of my tomorrows</p>
+        </header>
+
+        <!-- Romantic Promise/Vow Card -->
+        <section class="glass-card promise-card">
+            <div class="promise-overlay">
+                <h2 class="promise-title">My Forever Promise 💍</h2>
+                <p class="promise-message">
+                    "I may not be the most perfect guy, but I promise to put my all into us. I will always treat you like a queen. I will give you loyalty, reassurance, love, care, and all of my attention. I want to make you feel like you've found home, the way I feel with you."
+                </p>
+                <div class="promise-footer">I love you <span class="dynamic-gf-name">Samea</span> ❤️</div>
+            </div>
+        </section>
+
+        <!-- Polaroid Photo Gallery -->
+        <section class="glass-card gallery-section">
+            <h2 class="counter-title">Our Precious Moments</h2>
+            <div class="gallery-grid">
+                <!-- Polaroid 1: Example.jpg -->
+                <div class="polaroid-container">
+                    <div class="polaroid" style="--rot: -2deg;">
+                        <div class="polaroid-img-wrapper">
+                            <img src="Example.jpg" alt="Beautiful Moment" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'%23ff4d79\'><path d=\'M50 85c-1.5 0-3-.5-4.2-1.6L14.7 52.8C6.9 45 6.9 32.2 14.7 24.4c7.8-7.8 20.6-7.8 28.4 0L50 31.3l6.9-6.9c7.8-7.8 20.6-7.8 28.4 0 7.8 7.8 7.8 20.6 0 28.4L54.2 83.4c-1.2 1.1-2.7 1.6-4.2 1.6z\'/></svg>'">
+                        </div>
+                        <div class="polaroid-caption">My Everything ❤️</div>
+                    </div>
+                </div>
+                
+                <!-- Polaroid 2: Fallback to Background or custom image if provided -->
+                <div class="polaroid-container">
+                    <div class="polaroid" style="--rot: 3deg;">
+                        <div class="polaroid-img-wrapper">
+                            <img src="image 2.jpg" alt="You" onerror="this.src='Background.jpg'">
+                        </div>
+                        <div class="polaroid-caption">The Girl of My Dreams ✨</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Heartfelt Love Letter Section -->
+        <section class="glass-card letter-section">
+            <h2 class="letter-heading">For You, My Queen</h2>
+            <div class="letter-text">
+                <p class="letter-p">To me, you are everything. You mean the world to me. I will risk everything and anything for you to be here with me forever. I'm so in love with you simply because you’re you.</p>
+                
+                <p class="letter-p">You are my forever, and I will never ever change a thing about us and how we are. It will stay the same. Every day we grow together. You’re perfect.</p>
+                
+                <span class="highlight-text">"Your smile brings joy to me, something unexplainable. Seeing your smile literally changes my whole day."</span>
+                
+                <p class="letter-p">Your eyes are the most beautiful thing I’ve seen in my life, and though you may not think so, they truly are something special. Your eyes have the ability to make me go all crazy; when I look into your eyes, I get lost, and I feel that it's the only place I want to be. When I look at you, I see our future, and I feel safe and secure. I really love you, and I love everything about you.</p>
+                
+                <p class="letter-p">I wish I was able to explain how wonderful you are to me, how I can just look at you lifelong and never get tired of your beauty. How the sound of your voice gives me butterflies. How hearing your laugh makes me smile. I wish I could also tell you how much I love you, but you have me at a loss for words. And even if I could put the words together to tell you these things, it wouldn't come anywhere near to show you how much you mean to me.</p>
+                
+                <span class="highlight-text">"I may not be the most perfect guy or the most amazing, but I'll put my all into our relationship. I'll always treat you like a queen."</span>
+                
+                <p class="letter-p">I will give reassurance, loyalty, love, care, affection, attention, and I'll try to make you feel like you found home the way I feel. I will always do my best for you. That's my promise to you.</p>
+                
+                <p class="letter-p">I love youuu. I'm always going to love you, no matter how many times you say not to do stuff for me—this is the only thing I ain't listening to! Out of everything, you are my priority. Just know that you are my girl, and I am your man. I will do everything to make you feel loved and special.</p>
+                
+                <span class="highlight-text">"Nothing will stop me from loving you, no matter what. I love you. You're the best thing that has happened to me in this lifetime."</span>
+            </div>
+        </section>
+
+        <!-- Flippable Cards Grid -->
+        <section class="glass-card">
+            <h2 class="counter-title">Hover over these for little reminders...</h2>
+            <div class="cards-grid">
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <i>✨</i>
+                            <span>Your Voice</span>
+                        </div>
+                        <div class="card-face card-back">
+                            "The sound of your voice gives me butterflies every single time."
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <i>🌸</i>
+                            <span>Your Smile</span>
+                        </div>
+                        <div class="card-face card-back">
+                            "Seeing your smile literally changes my whole day and brings me unexplainable joy."
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <i>👀</i>
+                            <span>Your Eyes</span>
+                        </div>
+                        <div class="card-face card-back">
+                            "Your eyes have the ability to make me go crazy. When I look in them, I get lost."
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-face card-front">
+                            <i>🏡</i>
+                            <span>My Promise</span>
+                        </div>
+                        <div class="card-face card-back">
+                            "I'll try to make you feel like you found home, the way you make me feel."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <!-- 3. Floating Music Controller -->
+    <div class="music-player">
+        <span class="music-indicator" id="music-indicator">PLAY MUSIC</span>
+        <button class="music-btn" id="music-btn" aria-label="Toggle Music">🎵</button>
+    </div>
+
+    <!-- 4. Dynamic Settings Config Panel (Allows real-time user customization) -->
+    <button class="config-trigger" id="config-trigger" title="Customize Names & Date">⚙️</button>
+
+    <div class="modal-overlay" id="config-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title">Customize Your Wish Page</h3>
+                <button class="modal-close" id="config-close">&times;</button>
+            </div>
+            <form id="config-form">
+                <div class="form-group">
+                    <label class="form-label" for="input-gf-name">Girlfriend's Name</label>
+                    <input type="text" id="input-gf-name" class="form-input" placeholder="e.g., Emily" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="input-date">Anniversary Date</label>
+                    <input type="date" id="input-date" class="form-input" required>
+                </div>
+
+                <button type="submit" class="form-btn">Save Changes ❤️</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js?v=4"></script>
+</body>
+</html>
