@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // State management and LocalStorage keys
-    const STORAGE_PREFIX = 'hgd_wish_';
-    const config = {
-        gfName: localStorage.getItem(STORAGE_PREFIX + 'gf_name') || 'Samea',
-        anniversary: localStorage.getItem(STORAGE_PREFIX + 'anniversary') || '2025-08-01T00:00:00',
-        customText: localStorage.getItem(STORAGE_PREFIX + 'custom_text') || ''
-    };
-
     // DOM elements
     const audio = document.getElementById('bg-music');
     const envelopeWrapper = document.getElementById('envelope-wrapper');
@@ -15,35 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainWrapper = document.getElementById('main-wrapper');
     const musicBtn = document.getElementById('music-btn');
     const musicIndicator = document.getElementById('music-indicator');
-    
-    // Config panel elements
-    const configTrigger = document.getElementById('config-trigger');
-    const configModal = document.getElementById('config-modal');
-    const configClose = document.getElementById('config-close');
-    const configForm = document.getElementById('config-form');
-    
-    // Config input fields
-    const inputGfName = document.getElementById('input-gf-name');
-    const inputDate = document.getElementById('input-date');
-
-    // Dynamic display elements
-    const displayGfNames = document.querySelectorAll('.dynamic-gf-name');
-
-    // Init display values
-    function updateDisplayValues() {
-        displayGfNames.forEach(el => {
-            el.textContent = config.gfName;
-        });
-        
-        // Fill form fields
-        if (inputGfName) inputGfName.value = config.gfName;
-        if (inputDate) {
-            // Convert 'YYYY-MM-DDTHH:MM' to just 'YYYY-MM-DD' for simple date picker
-            inputDate.value = config.anniversary.split('T')[0];
-        }
-    }
-
-    updateDisplayValues();
 
     // 1. Envelope opening and site entry
     let siteOpened = false;
@@ -202,54 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // 5. Config Modal Handlers
-    if (configTrigger && configModal && configClose) {
-        configTrigger.addEventListener('click', () => {
-            configModal.classList.add('show');
+    // 5. Mobile card flip support (tap to flip)
+    const cardItems = document.querySelectorAll('.card-item');
+    cardItems.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
         });
-
-        configClose.addEventListener('click', () => {
-            configModal.classList.remove('show');
-        });
-
-        // Close on overlay click
-        configModal.addEventListener('click', (e) => {
-            if (e.target === configModal) {
-                configModal.classList.remove('show');
-            }
-        });
-
-        // Form Submission
-        configForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const newName = inputGfName.value.trim() || 'Samea';
-            const newDateVal = inputDate.value; // YYYY-MM-DD
-            
-            // Format date value correctly
-            let newAnniversary = config.anniversary;
-            if (newDateVal) {
-                newAnniversary = newDateVal + 'T00:00:00';
-            }
-
-            // Save to localStorage
-            localStorage.setItem(STORAGE_PREFIX + 'gf_name', newName);
-            localStorage.setItem(STORAGE_PREFIX + 'anniversary', newAnniversary);
-
-            // Update configuration state
-            config.gfName = newName;
-            config.anniversary = newAnniversary;
-
-            // Update displays
-            updateDisplayValues();
-
-            // Hide modal
-            configModal.classList.remove('show');
-
-            // Quick ripple effect to confirm save
-            alert("Settings updated beautifully! ❤️");
-        });
-    }
+    });
 
     // Scroll animation loader for glass-cards
     const observerOptions = {
